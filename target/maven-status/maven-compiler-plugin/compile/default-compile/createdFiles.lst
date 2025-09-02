@@ -1,0 +1,15 @@
+com/humanaid/dto/ApiResponse.class
+com/humanaid/service/NewsService.class
+com/humanaid/HumanaidApplication.class
+com/humanaid/repository/ContactRepository.class
+com/humanaid/entity/Contact.class
+com/humanaid/exception/GlobalExceptionHandler.class
+com/humanaid/config/AsyncConfig.class
+com/humanaid/controller/ContactController.class
+com/humanaid/entity/News.class
+com/humanaid/dto/ContactRequest.class
+com/humanaid/repository/NewsRepository.class
+com/humanaid/service/ContactService.class
+com/humanaid/controller/NewsController.class
+com/humanaid/service/EmailService.class
+com/humanaid/config/WebConfig.class

@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: humanaid-backend-test
+  
+  # 테스트용 데이터베이스 설정
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  
+  # JPA 설정
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+  
+  # H2 콘솔 비활성화 (테스트용)
+  h2:
+    console:
+      enabled: false
+  
+  # 메일 설정 (테스트용 - 실제 발송하지 않음)
+  mail:
+    host: localhost
+    port: 25
+    username: test@test.com
+    password: test
+
+# 서버 설정
+server:
+  port: 0  # 랜덤 포트 사용
+
+# 로깅 설정 (테스트용)
+logging:
+  level:
+    com.humanaid: INFO
+    org.springframework.security: WARN
+    org.hibernate: WARN
+
+# JWT 설정
+jwt:
+  secret: test-secret-key-for-jwt-token-generation-2024
+  expiration: 86400000
+
+# CORS 설정
+cors:
+  allowed-origins: 
+    - http://localhost:3000
