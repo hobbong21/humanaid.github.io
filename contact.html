@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연락처 - Human.Ai.D</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="HumanAId Logo" class="logo">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">Human.Ai.D</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="about.html">회사소개</a></li>
+                <li><a href="index.html#services">사업분야</a></li>
+                <li><a href="news.html">뉴스/IR</a></li>
+                <li><a href="contact.html" class="active">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1>연락처</h1>
+                <p>Human.Ai.D와 함께 AI의 새로운 가능성을 탐험해보세요</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Main Section -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <h2>연락처 정보</h2>
+                    <div class="contact-details-list">
+                        <div class="contact-detail-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-detail-content">
+                                <h3>이메일</h3>
+                                <p><a href="mailto:contact@humanaid.digital">contact@humanaid.digital</a></p>
+                                <span class="contact-note">일반 문의 및 파트너십</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-detail-content">
+                                <h3>전화</h3>
+                                <p><a href="tel:02-1234-5678">02-1234-5678</a></p>
+                                <span class="contact-note">평일 09:00 ~ 18:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-detail-content">
+                                <h3>주소</h3>
+                                <p>서울특별시 강남구 테헤란로 123, 456호</p>
+                                <span class="contact-note">Human.Ai.D 본사</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail-item">
+                            <div class="contact-icon">🕒</div>
+                            <div class="contact-detail-content">
+                                <h3>운영시간</h3>
+                                <p>평일 09:00 ~ 18:00</p>
+                                <span class="contact-note">토·일·공휴일 휴무</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>문의하기</h2>
+                    <form class="contact-form-main" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">이름 *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">이메일 *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">회사명</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">연락처</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inquiry-type">문의 유형 *</label>
+                            <select id="inquiry-type" name="inquiry-type" required>
+                                <option value="">선택해주세요</option>
+                                <option value="general">일반 문의</option>
+                                <option value="partnership">파트너십</option>
+                                <option value="investment">투자 문의</option>
+                                <option value="career">채용 문의</option>
+                                <option value="media">언론 문의</option>
+                                <option value="support">기술 지원</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">제목 *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">메시지 *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="문의 내용을 자세히 작성해주세요."></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacy-agree" name="privacy-agree" required>
+                                <span class="checkmark"></span>
+                                <a href="privacy-policy.html" target="_blank">개인정보처리방침</a>에 동의합니다. *
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="marketing-agree" name="marketing-agree">
+                                <span class="checkmark"></span>
+                                마케팅 정보 수신에 동의합니다. (선택)
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">문의 보내기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Contacts Section -->
+    <section class="department-contacts">
+        <div class="container">
+            <h2>부서별 연락처</h2>
+            <div class="departments-grid">
+                <div class="department-card">
+                    <div class="department-icon">💼</div>
+                    <h3>사업개발팀</h3>
+                    <p>파트너십 및 사업 제휴 문의</p>
+                    <a href="mailto:business@humanaid.digital">business@humanaid.digital</a>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">💰</div>
+                    <h3>투자관계팀</h3>
+                    <p>투자 및 IR 관련 문의</p>
+                    <a href="mailto:ir@humanaid.digital">ir@humanaid.digital</a>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">👥</div>
+                    <h3>인사팀</h3>
+                    <p>채용 및 인사 관련 문의</p>
+                    <a href="mailto:hr@humanaid.digital">hr@humanaid.digital</a>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">📰</div>
+                    <h3>홍보팀</h3>
+                    <p>언론 및 홍보 관련 문의</p>
+                    <a href="mailto:pr@humanaid.digital">pr@humanaid.digital</a>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">🛠️</div>
+                    <h3>기술지원팀</h3>
+                    <p>기술 지원 및 서비스 문의</p>
+                    <a href="mailto:support@humanaid.digital">support@humanaid.digital</a>
+                </div>
+                
+                <div class="department-card">
+                    <div class="department-icon">⚖️</div>
+                    <h3>법무팀</h3>
+                    <p>법무 및 컴플라이언스 문의</p>
+                    <a href="mailto:legal@humanaid.digital">legal@humanaid.digital</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>오시는 길</h2>
+            <div class="map-content">
+                <div class="map-placeholder">
+                    <div class="map-icon">🗺️</div>
+                    <p>지도 영역</p>
+                    <span>실제 서비스에서는 Google Maps 또는 네이버 지도 API를 연동합니다</span>
+                </div>
+                <div class="location-info">
+                    <h3>교통 안내</h3>
+                    <div class="transport-info">
+                        <div class="transport-item">
+                            <strong>🚇 지하철</strong>
+                            <p>2호선 강남역 3번 출구에서 도보 5분</p>
+                            <p>신분당선 강남역 1번 출구에서 도보 3분</p>
+                        </div>
+                        <div class="transport-item">
+                            <strong>🚌 버스</strong>
+                            <p>강남역 정류장 하차</p>
+                            <p>간선: 146, 360, 740</p>
+                            <p>지선: 3412, 6411</p>
+                        </div>
+                        <div class="transport-item">
+                            <strong>🚗 자가용</strong>
+                            <p>건물 지하 주차장 이용 가능</p>
+                            <p>주차 요금: 시간당 2,000원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="HumanAId Logo" class="footer-logo">
+                        <h3>Human.Ai.D</h3>
+                    </div>
+                    <p class="footer-description">AI와 인간의 협력으로 새로운 미래를 만들어갑니다.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">AI 의료 컨설팅</a></li>
+                        <li><a href="index.html#services">AI 교육 도우미</a></li>
+                        <li><a href="index.html#services">AI 고객 서비스</a></li>
+                        <li><a href="index.html#services">AI 에이전시</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>회사</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">회사소개</a></li>
+                        <li><a href="contact.html">연락처</a></li>
+                        <li><a href="mailto:contact@humanaid.digital">이메일</a></li>
+                        <li><a href="tel:02-1234-5678">전화</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>법적 고지</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">개인정보처리방침</a></li>
+                        <li><a href="terms-of-service.html">이용약관</a></li>
+                        <li><a href="#cookies">쿠키 정책</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <p>주식회사 Human.Ai.D | 대표이사: 송기영 | 사업자등록번호: 123-45-67890</p>
+                    <p>주소: 서울특별시 강남구 테헤란로 123, 456호 | 전화: 02-1234-5678</p>
+                </div>
+                <p class="footer-copyright">&copy; 2025 Human.Ai.D. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

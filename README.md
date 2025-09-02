@@ -1,2 +1,7 @@
-# humanaid.github.io
-my company page
+# Human.Ai.D 회사 홈페이지
+Human.Ai.D 회사의 공식 홈페이지입니다.
+
+## 회사 정보
+- 회사명: 주식회사 Human.Ai.D
+- 대표이사: 송기영
+- 사업분야: AI 기반 솔루션 개발 및 서비스

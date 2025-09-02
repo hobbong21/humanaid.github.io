@@ -1,0 +1,71 @@
+{
+  "lastUpdated": "2025-08-22T00:00:00Z",
+  "news": [
+    {
+      "id": "news-001",
+      "title": "OpenAI, GPT-5 개발 완료... 2025년 상반기 출시 예정",
+      "summary": "OpenAI가 차세대 언어모델 GPT-5의 개발을 완료했다고 발표했습니다. GPT-5는 기존 모델 대비 추론 능력과 멀티모달 처리 성능이 크게 향상되었습니다.",
+      "published_at": "2025-08-15T09:30:00Z",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/ai-news",
+      "image_url": null,
+      "tags": ["OpenAI", "GPT-5", "언어모델"],
+      "category": "AI 모델"
+    },
+    {
+      "id": "news-002",
+      "title": "구글, AI 칩 TPU v6 공개... 성능 3배 향상",
+      "summary": "구글이 새로운 AI 전용 칩 TPU v6를 공개했습니다. 이전 세대 대비 3배 향상된 성능으로 대규모 AI 모델 훈련 시간을 대폭 단축할 수 있습니다.",
+      "published_at": "2025-08-14T14:20:00Z",
+      "source": "Google AI",
+      "url": "https://ai.google/news",
+      "image_url": null,
+      "tags": ["Google", "TPU", "AI칩"],
+      "category": "하드웨어"
+    },
+    {
+      "id": "news-003",
+      "title": "메타, 라마 3.1 오픈소스 모델 출시",
+      "summary": "메타가 라마 3.1 오픈소스 언어모델을 출시했습니다. 4050억 개의 매개변수를 가진 이 모델은 상업적 이용이 가능한 최대 규모의 오픈소스 모델입니다.",
+      "published_at": "2025-08-13T11:15:00Z",
+      "source": "Meta AI",
+      "url": "https://ai.meta.com/news",
+      "image_url": null,
+      "tags": ["Meta", "Llama", "오픈소스"],
+      "category": "오픈소스"
+    },
+    {
+      "id": "news-004",
+      "title": "AI 의료진단 정확도 95% 달성, 상용화 임박",
+      "summary": "국내 AI 스타트업이 개발한 의료 영상 진단 AI가 95%의 정확도를 달성하며 상용화를 앞두고 있습니다. 특히 폐암 조기 진단 분야에서 뛰어난 성과를 보이고 있습니다.",
+      "published_at": "2025-08-12T16:45:00Z",
+      "source": "의료AI뉴스",
+      "url": "https://medicalai.news",
+      "image_url": null,
+      "tags": ["의료AI", "진단", "폐암"],
+      "category": "의료 AI"
+    },
+    {
+      "id": "news-005",
+      "title": "마이크로소프트, 코파일럿 AI 업데이트 발표",
+      "summary": "마이크로소프트가 코파일럿 AI의 대규모 업데이트를 발표했습니다. 새로운 버전은 코드 생성 속도가 40% 향상되었으며, 더 정확한 코드 제안을 제공합니다.",
+      "published_at": "2025-08-11T13:30:00Z",
+      "source": "Microsoft Blog",
+      "url": "https://blogs.microsoft.com/ai",
+      "image_url": null,
+      "tags": ["Microsoft", "Copilot", "코드생성"],
+      "category": "개발도구"
+    },
+    {
+      "id": "news-006",
+      "title": "엔비디아, H200 GPU로 AI 훈련 성능 혁신",
+      "summary": "엔비디아가 새로운 H200 GPU를 공개했습니다. 이전 세대 대비 2.5배 향상된 메모리 대역폭으로 대규모 AI 모델 훈련에서 획기적인 성능 개선을 보여줍니다.",
+      "published_at": "2025-08-10T10:00:00Z",
+      "source": "NVIDIA News",
+      "url": "https://nvidianews.nvidia.com",
+      "image_url": null,
+      "tags": ["NVIDIA", "H200", "GPU"],
+      "category": "하드웨어"
+    }
+  ]
+}

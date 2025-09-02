@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Debug - HumanAId</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 9999;
+        }
+        .debug-controls {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 9999;
+        }
+        .debug-controls button {
+            margin: 2px;
+            padding: 5px 10px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info" id="debugInfo">
+        Carousel Debug Info
+    </div>
+    
+    <div class="debug-controls">
+        <button onclick="debugCarousel()">Debug Carousel</button>
+        <button onclick="testSlide(0)">Slide 1</button>
+        <button onclick="testSlide(1)">Slide 2</button>
+        <button onclick="testSlide(2)">Slide 3</button>
+        <button onclick="testSlide(3)">Slide 4</button>
+    </div>
+
+    <!-- Highlights Section -->
+    <section class="highlights" style="margin-top: 100px;">
+        <div class="container">
+            <h2>주요 하이라이트 (Debug Mode)</h2>
+            <div class="highlights-carousel">
+                <div class="highlight-track">
+                    <div class="highlight-slide active">
+                        <div class="highlight-content">
+                            <div class="highlight-text">
+                                <span class="highlight-category">AI 의료</span>
+                                <h3>차세대 AI 의료 진단 시스템 개발</h3>
+                                <p>딥러닝 기반의 의료 영상 분석으로 조기 진단 정확도를 95% 이상 향상시켰습니다.</p>
+                                <a href="#" class="highlight-link">자세히 보기 →</a>
+                            </div>
+                            <div class="highlight-visual">
+                                <div class="highlight-icon">🏥</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-slide">
+                        <div class="highlight-content">
+                            <div class="highlight-text">
+                                <span class="highlight-category">AI 교육</span>
+                                <h3>개인 맞춤형 AI 학습 플랫폼 출시</h3>
+                                <p>학습자의 패턴을 분석하여 최적화된 학습 경로를 제공하는 혁신적인 교육 솔루션입니다.</p>
+                                <a href="#" class="highlight-link">자세히 보기 →</a>
+                            </div>
+                            <div class="highlight-visual">
+                                <div class="highlight-icon">📚</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-slide">
+                        <div class="highlight-content">
+                            <div class="highlight-text">
+                                <span class="highlight-category">투자 유치</span>
+                                <h3>시리즈 A 라운드 100억원 투자 유치</h3>
+                                <p>글로벌 VC들로부터 AI 기술력을 인정받아 대규모 투자를 성공적으로 유치했습니다.</p>
+                                <a href="#" class="highlight-link">자세히 보기 →</a>
+                            </div>
+                            <div class="highlight-visual">
+                                <div class="highlight-icon">💰</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-slide">
+                        <div class="highlight-content">
+                            <div class="highlight-text">
+                                <span class="highlight-category">파트너십</span>
+                                <h3>글로벌 테크 기업과 전략적 제휴</h3>
+                                <p>세계 최대 클라우드 서비스 제공업체와 AI 솔루션 공동 개발 협약을 체결했습니다.</p>
+                                <a href="#" class="highlight-link">자세히 보기 →</a>
+                            </div>
+                            <div class="highlight-visual">
+                                <div class="highlight-icon">🤝</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
+                    </div>
+                    <button class="carousel-btn next-btn">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        function updateDebugInfo() {
+            const debugInfo = document.getElementById('debugInfo');
+            const slides = document.querySelectorAll('.highlight-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            const activeSlide = document.querySelector('.highlight-slide.active');
+            const activeIndicator = document.querySelector('.indicator.active');
+            
+            debugInfo.innerHTML = `
+                Slides: ${slides.length}<br>
+                Indicators: ${indicators.length}<br>
+                Active Slide: ${activeSlide ? Array.from(slides).indexOf(activeSlide) : 'None'}<br>
+                Active Indicator: ${activeIndicator ? Array.from(indicators).indexOf(activeIndicator) : 'None'}<br>
+                Time: ${new Date().toLocaleTimeString()}
+            `;
+        }
+
+        function debugCarousel() {
+            console.log('=== Carousel Debug ===');
+            const slides = document.querySelectorAll('.highlight-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            
+            console.log('Slides:', slides);
+            console.log('Indicators:', indicators);
+            console.log('Prev Button:', prevBtn);
+            console.log('Next Button:', nextBtn);
+            
+            slides.forEach((slide, index) => {
+                console.log(`Slide ${index}:`, slide.classList.contains('active') ? 'ACTIVE' : 'inactive');
+            });
+            
+            indicators.forEach((indicator, index) => {
+                console.log(`Indicator ${index}:`, indicator.classList.contains('active') ? 'ACTIVE' : 'inactive');
+            });
+        }
+
+        function testSlide(index) {
+            const slides = document.querySelectorAll('.highlight-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            // Remove active from all
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Add active to selected
+            if (slides[index]) slides[index].classList.add('active');
+            if (indicators[index]) indicators[index].classList.add('active');
+            
+            updateDebugInfo();
+        }
+
+        // Update debug info every second
+        setInterval(updateDebugInfo, 1000);
+        updateDebugInfo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/HumanaidApplication.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/service/ContactService.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/config/AsyncConfig.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/service/NewsService.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/config/WebConfig.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/dto/ApiResponse.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/exception/GlobalExceptionHandler.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/service/EmailService.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/controller/NewsController.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/repository/ContactRepository.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/entity/News.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/entity/Contact.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/repository/NewsRepository.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/dto/ContactRequest.java
+/Users/eliotsong/Documents/I. Program/test-sample_/humanaid-main/backend/src/main/java/com/humanaid/controller/ContactController.java

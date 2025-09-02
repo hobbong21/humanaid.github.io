@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지 - HumanAId</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="HumanAId Logo" class="logo">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">HumanAId</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="about.html">회사소개</a></li>
+                <li><a href="index.html#services">사업분야</a></li>
+                <li><a href="news.html">뉴스/IR</a></li>
+                <li><a href="contact.html">연락처</a></li>
+                <li><a href="admin.html" class="active">관리자</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Admin Login Section -->
+    <section class="admin-login" id="adminLogin">
+        <div class="container">
+            <div class="login-form-container">
+                <div class="login-header">
+                    <h1>관리자 로그인</h1>
+                    <p>HumanAId 관리자 페이지에 접근하려면 로그인하세요</p>
+                </div>
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="username">사용자명</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">비밀번호</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="login-btn">로그인</button>
+                </form>
+                <div class="login-info">
+                    <p><small>데모용 계정: admin / admin123</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Section -->
+    <section class="admin-dashboard" id="adminDashboard" style="display: none;">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>관리자 대시보드</h1>
+                <button class="logout-btn" id="logoutBtn">로그아웃</button>
+            </div>
+
+            <!-- Dashboard Stats -->
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <h3>총 방문자</h3>
+                        <p class="stat-number">12,847</p>
+                        <span class="stat-change positive">+12.5%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📧</div>
+                    <div class="stat-info">
+                        <h3>문의 건수</h3>
+                        <p class="stat-number">234</p>
+                        <span class="stat-change positive">+8.2%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📰</div>
+                    <div class="stat-info">
+                        <h3>뉴스 조회</h3>
+                        <p class="stat-number">5,672</p>
+                        <span class="stat-change negative">-2.1%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🚀</div>
+                    <div class="stat-info">
+                        <h3>서비스 문의</h3>
+                        <p class="stat-number">89</p>
+                        <span class="stat-change positive">+15.3%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Management Tabs -->
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="highlights">하이라이트 관리</button>
+                <button class="tab-btn" data-tab="news">뉴스 관리</button>
+                <button class="tab-btn" data-tab="services">서비스 관리</button>
+                <button class="tab-btn" data-tab="company">회사 정보</button>
+            </div>
+
+            <!-- Highlights Management -->
+            <div class="tab-content active" id="highlights">
+                <div class="content-section">
+                    <h2>하이라이트 관리</h2>
+                    <div class="highlights-manager">
+                        <div class="highlight-item" data-id="1">
+                            <div class="highlight-preview">
+                                <span class="category">AI 의료</span>
+                                <h3>차세대 AI 의료 진단 시스템 개발</h3>
+                                <p>딥러닝 기반의 의료 영상 분석으로 조기 진단 정확도를 95% 이상 향상시켰습니다.</p>
+                            </div>
+                            <div class="highlight-actions">
+                                <button class="edit-btn" onclick="editHighlight(1)">수정</button>
+                                <button class="delete-btn" onclick="deleteHighlight(1)">삭제</button>
+                            </div>
+                        </div>
+                        <div class="highlight-item" data-id="2">
+                            <div class="highlight-preview">
+                                <span class="category">AI 교육</span>
+                                <h3>개인 맞춤형 AI 학습 플랫폼 출시</h3>
+                                <p>학습자의 패턴을 분석하여 최적화된 학습 경로를 제공하는 혁신적인 교육 솔루션입니다.</p>
+                            </div>
+                            <div class="highlight-actions">
+                                <button class="edit-btn" onclick="editHighlight(2)">수정</button>
+                                <button class="delete-btn" onclick="deleteHighlight(2)">삭제</button>
+                            </div>
+                        </div>
+                        <button class="add-highlight-btn" onclick="addHighlight()">+ 새 하이라이트 추가</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Management -->
+            <div class="tab-content" id="news">
+                <div class="content-section">
+                    <h2>뉴스 관리</h2>
+                    <div class="news-manager">
+                        <div class="news-controls">
+                            <button class="refresh-news-btn" onclick="refreshNews()">뉴스 새로고침</button>
+                            <button class="add-news-btn" onclick="addCustomNews()">커스텀 뉴스 추가</button>
+                        </div>
+                        <div class="news-list" id="adminNewsList">
+                            <!-- 뉴스 목록이 여기에 동적으로 추가됩니다 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Management -->
+            <div class="tab-content" id="services">
+                <div class="content-section">
+                    <h2>서비스 관리</h2>
+                    <div class="services-manager">
+                        <div class="service-item">
+                            <div class="service-preview">
+                                <span class="service-icon">🏥</span>
+                                <h3>AI 기반 의료 컨설팅</h3>
+                                <p>개인의 건강 데이터를 분석하여 맞춤형 건강 관리 및 질병 예측 서비스를 제공하는 솔루션을 개발합니다.</p>
+                            </div>
+                            <div class="service-actions">
+                                <button class="edit-btn" onclick="editService(1)">수정</button>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-preview">
+                                <span class="service-icon">📚</span>
+                                <h3>AI 교육 및 학습 도우미</h3>
+                                <p>학생들의 학습 패턴과 취약점을 분석하여 개인별 맞춤 학습 계획을 세워주는 AI 튜터 프로그램을 개발합니다.</p>
+                            </div>
+                            <div class="service-actions">
+                                <button class="edit-btn" onclick="editService(2)">수정</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Info Management -->
+            <div class="tab-content" id="company">
+                <div class="content-section">
+                    <h2>회사 정보 관리</h2>
+                    <form class="company-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyName">회사명</label>
+                                <input type="text" id="companyName" value="주식회사 HumanAId">
+                            </div>
+                            <div class="form-group">
+                                <label for="ceoName">대표이사</label>
+                                <input type="text" id="ceoName" value="김AI">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="businessNumber">사업자등록번호</label>
+                                <input type="text" id="businessNumber" value="123-45-67890">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">전화번호</label>
+                                <input type="text" id="phoneNumber" value="02-1234-5678">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">주소</label>
+                            <input type="text" id="address" value="서울특별시 강남구 테헤란로 123, 456호">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">이메일</label>
+                            <input type="email" id="email" value="contact@humanaid.digital">
+                        </div>
+                        <button type="submit" class="save-btn">저장</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edit Modal -->
+    <div class="modal" id="editModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">항목 수정</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <div class="form-group">
+                        <label for="editCategory">카테고리</label>
+                        <input type="text" id="editCategory">
+                    </div>
+                    <div class="form-group">
+                        <label for="editTitle">제목</label>
+                        <input type="text" id="editTitle">
+                    </div>
+                    <div class="form-group">
+                        <label for="editDescription">설명</label>
+                        <textarea id="editDescription" rows="4"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="cancel-btn" onclick="closeModal()">취소</button>
+                        <button type="submit" class="save-btn">저장</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="HumanAId Logo" class="footer-logo">
+                        <h3>HumanAId</h3>
+                    </div>
+                    <p class="footer-description">AI와 인간의 협력으로 새로운 미래를 만들어갑니다.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">AI 의료 컨설팅</a></li>
+                        <li><a href="index.html#services">AI 교육 도우미</a></li>
+                        <li><a href="index.html#services">AI 고객 서비스</a></li>
+                        <li><a href="index.html#services">AI 에이전시</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>회사</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">회사소개</a></li>
+                        <li><a href="contact.html">연락처</a></li>
+                        <li><a href="mailto:contact@humanaid.digital">이메일</a></li>
+                        <li><a href="tel:02-1234-5678">전화</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>법적 고지</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">개인정보처리방침</a></li>
+                        <li><a href="terms-of-service.html">이용약관</a></li>
+                        <li><a href="#cookies">쿠키 정책</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <p>주식회사 HumanAId | 대표이사: 김AI | 사업자등록번호: 123-45-67890</p>
+                    <p>주소: 서울특별시 강남구 테헤란로 123, 456호 | 전화: 02-1234-5678</p>
+                </div>
+                <p class="footer-copyright">&copy; 2025 HumanAId. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

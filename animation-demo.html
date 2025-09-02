@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Demo - HumanAId</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .demo-section {
+            padding: 60px 0;
+            min-height: 100vh;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        .demo-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f1f3f5;
+        }
+        .demo-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+        .animation-trigger {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        .animation-trigger:hover {
+            background: #004499;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo Section 1: Fade Animations -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="demo-title" data-animation="fadeInUp">Fade Animations Demo</h2>
+            <div class="demo-grid">
+                <div class="demo-card" data-animation="fadeIn">
+                    <h3>Fade In</h3>
+                    <p>This card fades in smoothly when it comes into view.</p>
+                </div>
+                <div class="demo-card" data-animation="fadeInUp" data-animation-delay="100">
+                    <h3>Fade In Up</h3>
+                    <p>This card fades in from below with a slight delay.</p>
+                </div>
+                <div class="demo-card" data-animation="fadeInLeft" data-animation-delay="200">
+                    <h3>Fade In Left</h3>
+                    <p>This card slides in from the left side.</p>
+                </div>
+                <div class="demo-card" data-animation="fadeInRight" data-animation-delay="300">
+                    <h3>Fade In Right</h3>
+                    <p>This card slides in from the right side.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section 2: Scale Animations -->
+    <section class="demo-section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="demo-title" data-animation="scaleIn">Scale Animations Demo</h2>
+            <div class="demo-grid">
+                <div class="demo-card hover-lift" data-animation="scaleIn">
+                    <h3>Scale In + Hover Lift</h3>
+                    <p>This card scales in and lifts on hover.</p>
+                </div>
+                <div class="demo-card hover-scale" data-animation="scaleIn" data-animation-delay="100">
+                    <h3>Scale In + Hover Scale</h3>
+                    <p>This card scales in and scales more on hover.</p>
+                </div>
+                <div class="demo-card hover-tilt" data-animation="rotateIn" data-animation-delay="200">
+                    <h3>Rotate In + Hover Tilt</h3>
+                    <p>This card rotates in and tilts on hover.</p>
+                </div>
+                <div class="demo-card hover-glow" data-animation="scaleIn" data-animation-delay="300">
+                    <h3>Scale In + Hover Glow</h3>
+                    <p>This card scales in and glows on hover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section 3: Interactive Elements -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="demo-title" data-animation="slideInUp">Interactive Elements Demo</h2>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn-primary btn-animated" data-animation="fadeInUp">Primary Button</button>
+                <button class="btn-secondary btn-animated" data-animation="fadeInUp" data-animation-delay="100">Secondary Button</button>
+            </div>
+            
+            <div class="demo-grid" style="margin-top: 60px;">
+                <div class="demo-card card-animated" data-animation="fadeInUp">
+                    <h3>🏥 Medical AI</h3>
+                    <p>Advanced AI solutions for healthcare and medical diagnosis.</p>
+                </div>
+                <div class="demo-card card-animated" data-animation="fadeInUp" data-animation-delay="100">
+                    <h3>📚 Education AI</h3>
+                    <p>Personalized learning experiences powered by artificial intelligence.</p>
+                </div>
+                <div class="demo-card card-animated" data-animation="fadeInUp" data-animation-delay="200">
+                    <h3>💬 Customer Service</h3>
+                    <p>Intelligent chatbots and customer support automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section 4: Manual Animation Triggers -->
+    <section class="demo-section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="demo-title" data-animation="fadeInDown">Manual Animation Triggers</h2>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <button class="animation-trigger" onclick="triggerAnimation('fadeInUp')">Fade In Up</button>
+                <button class="animation-trigger" onclick="triggerAnimation('scaleIn')">Scale In</button>
+                <button class="animation-trigger" onclick="triggerAnimation('rotateIn')">Rotate In</button>
+                <button class="animation-trigger" onclick="triggerAnimation('slideInUp')">Slide In Up</button>
+                <button class="animation-trigger" onclick="resetAnimations()">Reset All</button>
+            </div>
+            
+            <div class="demo-grid">
+                <div class="demo-card manual-animation-target" id="manual-1">
+                    <h3>Manual Animation 1</h3>
+                    <p>Click the buttons above to trigger different animations on this card.</p>
+                </div>
+                <div class="demo-card manual-animation-target" id="manual-2">
+                    <h3>Manual Animation 2</h3>
+                    <p>This card will animate along with the first one.</p>
+                </div>
+                <div class="demo-card manual-animation-target" id="manual-3">
+                    <h3>Manual Animation 3</h3>
+                    <p>All three cards animate together when you click the buttons.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/animation-controller.js"></script>
+    <script>
+        // Manual animation trigger functions
+        function triggerAnimation(animationType) {
+            const targets = document.querySelectorAll('.manual-animation-target');
+            targets.forEach((target, index) => {
+                if (window.animationController) {
+                    setTimeout(() => {
+                        window.animationController.triggerAnimation(target, animationType, 600);
+                    }, index * 100);
+                }
+            });
+        }
+
+        function resetAnimations() {
+            const targets = document.querySelectorAll('.manual-animation-target');
+            targets.forEach(target => {
+                target.style.opacity = '1';
+                target.style.transform = 'none';
+                target.style.transition = 'none';
+                
+                setTimeout(() => {
+                    target.style.transition = '';
+                }, 50);
+            });
+        }
+
+        // Add some demo-specific enhancements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add click effects to demo cards
+            const demoCards = document.querySelectorAll('.demo-card');
+            demoCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    this.style.transition = 'transform 0.1s ease';
+                    
+                    setTimeout(() => {
+                        this.style.transform = '';
+                        this.style.transition = '';
+                    }, 100);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

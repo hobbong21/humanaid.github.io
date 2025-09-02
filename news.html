@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴스/IR - Human.Ai.D</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="HumanAId Logo" class="logo">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">Human.Ai.D</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">홈</a></li>
+                <li><a href="index.html#about">회사소개</a></li>
+                <li><a href="index.html#services">사업분야</a></li>
+                <li><a href="news.html" class="active">뉴스/IR</a></li>
+                <li><a href="index.html#contact">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- News Hero Section -->
+    <section class="news-hero">
+        <div class="container">
+            <div class="news-hero-content">
+                <h1>뉴스 & IR</h1>
+                <p>Human.Ai.D의 최신 소식과 투자자 정보를 확인하세요</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Tabs -->
+    <section class="news-tabs">
+        <div class="container">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="news">뉴스</button>
+                <button class="tab-btn" data-tab="press">보도자료</button>
+                <button class="tab-btn" data-tab="ir">IR 정보</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Content -->
+    <section class="news-content">
+        <div class="container">
+            <!-- News Tab -->
+            <div class="tab-content active" id="news">
+                <div class="news-loading" id="newsPageLoading">
+                    <div class="loading-spinner"></div>
+                    <p>최신 AI 뉴스를 불러오는 중...</p>
+                </div>
+
+                <div class="news-error" id="newsPageError" style="display: none;">
+                    <div class="error-icon">⚠️</div>
+                    <p>뉴스를 불러오는 중 오류가 발생했습니다.</p>
+                    <button class="retry-btn" onclick="loadNewsPageContent()">다시 시도</button>
+                </div>
+
+                <div class="news-grid" id="newsPageGrid">
+                    <!-- 딥서치 API에서 가져온 뉴스들이 여기에 동적으로 추가됩니다 -->
+                </div>
+
+                <!-- 회사 뉴스 섹션 (고정) -->
+                <div class="company-news-section">
+                    <h3>Human.Ai.D 소식</h3>
+                    <div class="news-grid">
+                        <article class="news-card featured">
+                            <div class="news-image">
+                                <div class="news-placeholder">📰</div>
+                            </div>
+                            <div class="news-info">
+                                <span class="news-category">주요 뉴스</span>
+                                <span class="news-date">2025.08.15</span>
+                            </div>
+                            <h3>Human.Ai.D, 차세대 AI 의료 진단 시스템 개발 완료</h3>
+                            <p>딥러닝 기반의 의료 영상 분석 기술로 조기 진단 정확도를 95% 이상 향상시킨 혁신적인 시스템을 개발했습니다.</p>
+                            <a href="#" class="read-more">자세히 보기</a>
+                        </article>
+
+                        <article class="news-card">
+                            <div class="news-image">
+                                <div class="news-placeholder">💰</div>
+                            </div>
+                            <div class="news-info">
+                                <span class="news-category">투자</span>
+                                <span class="news-date">2025.08.10</span>
+                            </div>
+                            <h3>시리즈 A 라운드 100억원 투자 유치 성공</h3>
+                            <p>글로벌 벤처캐피털들로부터 AI 기술력을 인정받아 대규모 투자를 성공적으로 유치했습니다.</p>
+                            <a href="#" class="read-more">자세히 보기</a>
+                        </article>
+
+                        <article class="news-card">
+                            <div class="news-image">
+                                <div class="news-placeholder">🤝</div>
+                            </div>
+                            <div class="news-info">
+                                <span class="news-category">파트너십</span>
+                                <span class="news-date">2025.08.05</span>
+                            </div>
+                            <h3>글로벌 테크 기업과 전략적 제휴 체결</h3>
+                            <p>세계 최대 클라우드 서비스 제공업체와 AI 솔루션 공동 개발 협약을 체결했습니다.</p>
+                            <a href="#" class="read-more">자세히 보기</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Press Tab -->
+            <div class="tab-content" id="press">
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-info">
+                            <span class="news-category">보도자료</span>
+                            <span class="news-date">2025.08.15</span>
+                        </div>
+                        <h3>[보도자료] Human.Ai.D, AI 의료 진단 시스템으로 헬스케어 혁신 선도</h3>
+                        <p>Human.Ai.D가 개발한 차세대 AI 의료 진단 시스템이 기존 진단 방식의 한계를 뛰어넘어 의료계에 새로운 패러다임을 제시하고 있습니다.</p>
+                        <a href="#" class="read-more">전문 보기</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-info">
+                            <span class="news-category">보도자료</span>
+                            <span class="news-date">2025.08.10</span>
+                        </div>
+                        <h3>[보도자료] Human.Ai.D, 시리즈 A 투자 유치로 글로벌 확장 가속화</h3>
+                        <p>Human.Ai.D가 시리즈 A 라운드에서 100억원 규모의 투자를 유치하며 글로벌 AI 시장 진출을 본격화합니다.</p>
+                        <a href="#" class="read-more">전문 보기</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-info">
+                            <span class="news-category">보도자료</span>
+                            <span class="news-date">2025.08.05</span>
+                        </div>
+                        <h3>[보도자료] Human.Ai.D-글로벌 테크 기업 전략적 파트너십 체결</h3>
+                        <p>Human.Ai.D가 세계적인 클라우드 서비스 제공업체와 전략적 제휴를 통해 AI 솔루션의 글로벌 확산을 추진합니다.</p>
+                        <a href="#" class="read-more">전문 보기</a>
+                    </article>
+                </div>
+            </div>
+
+            <!-- IR Tab -->
+            <div class="tab-content" id="ir">
+                <div class="ir-section">
+                    <div class="ir-overview">
+                        <h3>투자자 정보</h3>
+                        <div class="ir-stats">
+                            <div class="ir-stat">
+                                <h4>기업가치</h4>
+                                <p>500억원</p>
+                            </div>
+                            <div class="ir-stat">
+                                <h4>누적 투자금</h4>
+                                <p>150억원</p>
+                            </div>
+                            <div class="ir-stat">
+                                <h4>직원 수</h4>
+                                <p>120명</p>
+                            </div>
+                            <div class="ir-stat">
+                                <h4>설립년도</h4>
+                                <p>2023년</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ir-documents">
+                        <h3>IR 자료</h3>
+                        <div class="document-list">
+                            <div class="document-item">
+                                <div class="document-icon">📊</div>
+                                <div class="document-info">
+                                    <h4>2025년 2분기 실적 발표</h4>
+                                    <p>2025.08.15</p>
+                                </div>
+                                <a href="#" class="download-btn">다운로드</a>
+                            </div>
+                            <div class="document-item">
+                                <div class="document-icon">📈</div>
+                                <div class="document-info">
+                                    <h4>투자자 프레젠테이션</h4>
+                                    <p>2025.08.01</p>
+                                </div>
+                                <a href="#" class="download-btn">다운로드</a>
+                            </div>
+                            <div class="document-item">
+                                <div class="document-icon">📋</div>
+                                <div class="document-info">
+                                    <h4>사업계획서</h4>
+                                    <p>2025.07.15</p>
+                                </div>
+                                <a href="#" class="download-btn">다운로드</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ir-contact">
+                        <h3>투자자 문의</h3>
+                        <div class="contact-info">
+                            <p><strong>IR 담당자:</strong> 김투자 (IR팀장)</p>
+                            <p><strong>이메일:</strong> ir@humanaid.digital</p>
+                            <p><strong>전화:</strong> 02-1234-5679</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="HumanAId Logo" class="footer-logo">
+                        <h3>Human.Ai.D</h3>
+                    </div>
+                    <p class="footer-description">AI와 인간의 협력으로 새로운 미래를 만들어갑니다.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">AI 의료 컨설팅</a></li>
+                        <li><a href="index.html#services">AI 교육 도우미</a></li>
+                        <li><a href="index.html#services">AI 고객 서비스</a></li>
+                        <li><a href="index.html#services">AI 에이전시</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>회사</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#about">회사소개</a></li>
+                        <li><a href="index.html#contact">연락처</a></li>
+                        <li><a href="mailto:contact@humanaid.digital">이메일</a></li>
+                        <li><a href="tel:02-1234-5678">전화</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>법적 고지</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">개인정보처리방침</a></li>
+                        <li><a href="terms-of-service.html">이용약관</a></li>
+                        <li><a href="#cookies">쿠키 정책</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <p>주식회사 Human.Ai.D | 대표이사: 송기영 | 사업자등록번호: 123-45-67890</p>
+                    <p>주소: 서울특별시 강남구 테헤란로 123, 456호 | 전화: 02-1234-5678</p>
+                </div>
+                <p class="footer-copyright">&copy; 2025 Human.Ai.D. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/news-manager.js"></script>
+    <script src="script.js"></script>
+
+    <!-- 뉴스 페이지 자동 로딩 -->
+    <script>
+        // 페이지 로드 완료 후 뉴스 로딩
+        window.addEventListener('load', function () {
+            console.log('뉴스 페이지 로드 완료, 뉴스 로딩 시작');
+
+            // 뉴스 그리드가 있는지 확인
+            const newsPageGrid = document.getElementById('newsPageGrid');
+            if (newsPageGrid) {
+                console.log('뉴스 그리드 발견, 뉴스 로딩 실행');
+
+                // 뉴스 매니저가 준비될 때까지 대기 후 로딩
+                let attempts = 0;
+                const maxAttempts = 15;
+
+                function tryLoadNewsPage() {
+                    attempts++;
+                    console.log(`뉴스 페이지 로딩 시도 ${attempts}/${maxAttempts}`);
+
+                    if (window.newsManager && typeof window.loadNewsPageContent === 'function') {
+                        console.log('뉴스 매니저와 로딩 함수 준비됨, 뉴스 페이지 로딩');
+                        window.loadNewsPageContent();
+                    } else if (attempts < maxAttempts) {
+                        console.log('뉴스 매니저 대기 중...');
+                        setTimeout(tryLoadNewsPage, 300);
+                    } else {
+                        console.log('뉴스 매니저 로딩 실패, 기본 뉴스 표시');
+                        showFallbackNewsPage();
+                    }
+                }
+
+                // 즉시 시도
+                tryLoadNewsPage();
+
+                // 추가 보장: DOM이 완전히 준비된 후에도 시도
+                setTimeout(() => {
+                    if (newsPageGrid.children.length === 0) {
+                        console.log('뉴스가 아직 로드되지 않음, 재시도');
+                        tryLoadNewsPage();
+                    }
+                }, 2000);
+            }
+        });
+
+        // 폴백 뉴스 표시 함수 (뉴스 페이지용)
+        function showFallbackNewsPage() {
+            const newsPageGrid = document.getElementById('newsPageGrid');
+            const newsPageLoading = document.getElementById('newsPageLoading');
+
+            if (newsPageLoading) newsPageLoading.style.display = 'none';
+
+            if (newsPageGrid) {
+                newsPageGrid.innerHTML = `
+                    <article class="news-card">
+                        <div class="news-image">
+                            <div class="news-placeholder">🤖</div>
+                        </div>
+                        <div class="news-info">
+                            <span class="news-category">OpenAI</span>
+                            <span class="news-date">오늘</span>
+                        </div>
+                        <h3>OpenAI GPT-5 개발 완료, 2025년 상반기 출시 예정</h3>
+                        <p>OpenAI가 차세대 언어모델 GPT-5의 개발을 완료했다고 발표했습니다. GPT-5는 기존 모델 대비 추론 능력과 멀티모달 처리 성능이 크게 향상되었습니다.</p>
+                        <div class="news-tags">
+                            <span class="tag">OpenAI</span>
+                            <span class="tag">GPT-5</span>
+                            <span class="tag">언어모델</span>
+                        </div>
+                        <a href="#" class="read-more">자세히 보기</a>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <div class="news-placeholder">🔧</div>
+                        </div>
+                        <div class="news-info">
+                            <span class="news-category">Google</span>
+                            <span class="news-date">어제</span>
+                        </div>
+                        <h3>구글, AI 칩 TPU v6 공개... 성능 3배 향상</h3>
+                        <p>구글이 새로운 AI 전용 칩 TPU v6를 공개했습니다. 이전 세대 대비 3배 향상된 성능으로 대규모 AI 모델 훈련 시간을 대폭 단축할 수 있습니다.</p>
+                        <div class="news-tags">
+                            <span class="tag">Google</span>
+                            <span class="tag">TPU</span>
+                            <span class="tag">AI칩</span>
+                        </div>
+                        <a href="#" class="read-more">자세히 보기</a>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <div class="news-placeholder">🚀</div>
+                        </div>
+                        <div class="news-info">
+                            <span class="news-category">Meta</span>
+                            <span class="news-date">2일 전</span>
+                        </div>
+                        <h3>메타, 라마 3.1 오픈소스 모델 출시</h3>
+                        <p>메타가 라마 3.1 오픈소스 언어모델을 출시했습니다. 4050억 개의 매개변수를 가진 이 모델은 상업적 용도로도 자유롭게 사용할 수 있습니다.</p>
+                        <div class="news-tags">
+                            <span class="tag">Meta</span>
+                            <span class="tag">Llama</span>
+                            <span class="tag">오픈소스</span>
+                        </div>
+                        <a href="#" class="read-more">자세히 보기</a>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <div class="news-placeholder">💡</div>
+                        </div>
+                        <div class="news-info">
+                            <span class="news-category">Microsoft</span>
+                            <span class="news-date">3일 전</span>
+                        </div>
+                        <h3>마이크로소프트, 코파일럿 AI 대폭 업그레이드</h3>
+                        <p>마이크로소프트가 코파일럿 AI의 새로운 버전을 공개하며 개발자 생산성을 40% 향상시킬 수 있다고 발표했습니다.</p>
+                        <div class="news-tags">
+                            <span class="tag">Microsoft</span>
+                            <span class="tag">Copilot</span>
+                            <span class="tag">개발도구</span>
+                        </div>
+                        <a href="#" class="read-more">자세히 보기</a>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <div class="news-placeholder">🧠</div>
+                        </div>
+                        <div class="news-info">
+                            <span class="news-category">AI Research</span>
+                            <span class="news-date">4일 전</span>
+                        </div>
+                        <h3>AI 모델의 환각 현상 해결하는 새로운 기법 개발</h3>
+                        <p>스탠포드 대학 연구팀이 AI 모델의 환각(hallucination) 현상을 90% 이상 줄일 수 있는 혁신적인 기법을 개발했다고 발표했습니다.</p>
+                        <div class="news-tags">
+                            <span class="tag">Stanford</span>
+                            <span class="tag">연구</span>
+                            <span class="tag">환각현상</span>
+                        </div>
+                        <a href="#" class="read-more">자세히 보기</a>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <div class="news-placeholder">🎯</div>
+                        </div>
+                        <div class="news-info">
+                            <span class="news-category">Industry</span>
+                            <span class="news-date">5일 전</span>
+                        </div>
+                        <h3>글로벌 AI 시장, 2025년 2조 달러 돌파 전망</h3>
+                        <p>시장조사기관에 따르면 글로벌 AI 시장 규모가 2025년에 2조 달러를 돌파할 것으로 예상된다고 발표했습니다.</p>
+                        <div class="news-tags">
+                            <span class="tag">시장분석</span>
+                            <span class="tag">전망</span>
+                            <span class="tag">성장</span>
+                        </div>
+                        <a href="#" class="read-more">자세히 보기</a>
+                    </article>
+                `;
+                console.log('뉴스 페이지 폴백 뉴스 표시 완료');
+            }
+        }
+
+        // 테스트 함수들을 전역으로 노출
+        window.testNewsPageLoading = function () {
+            console.log('=== 뉴스 페이지 로딩 테스트 ===');
+            const newsPageGrid = document.getElementById('newsPageGrid');
+            const newsPageLoading = document.getElementById('newsPageLoading');
+
+            if (newsPageGrid && newsPageLoading) {
+                newsPageLoading.style.display = 'block';
+                newsPageGrid.innerHTML = '';
+
+                setTimeout(() => {
+                    showFallbackNewsPage();
+                }, 2000);
+            }
+        };
+    </script>
+</body>
+
+</html>

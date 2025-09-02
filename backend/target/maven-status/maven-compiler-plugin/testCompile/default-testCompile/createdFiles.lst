@@ -1,0 +1,5 @@
+com/humanaid/integration/ContactIntegrationTest.class
+com/humanaid/controller/ContactControllerTest.class
+com/humanaid/controller/NewsControllerTest.class
+com/humanaid/service/ContactServiceTest.class
+com/humanaid/HumanaidApplicationTests.class
